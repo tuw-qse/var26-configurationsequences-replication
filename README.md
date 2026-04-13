@@ -21,7 +21,7 @@ The repository is structured as follows:
 - [FeatureIDE extension](/FeatureIDE/) contains the FeatureIDE plugin extension that uses the UVL parsers and provides the adapted UVL feature model editor
 - [evaluation](/evaluation/)
     - [case studies](/evaluation/case-studies/) the feature models from a former [case study] enriched with visibiltiy constraints 
-    - [user study]() the questionnaire and the task descriptions that we gave the study participants. We omit the resonsees due to GDPR regulations.
+    - [user study](evaluation/user-study) the questionnaire and the task descriptions that we gave the study participants. We omit the resonsees due to GDPR regulations.
 - [script](compile-featureide.sh) to build the extended UVL parser, push it into FeatureIDE, and build the extended FeatureIDE
 
 Descriptions of how to build and use the individual projects (e.g., the UVL Parser) are provided in the README files of the respetive folders. 
