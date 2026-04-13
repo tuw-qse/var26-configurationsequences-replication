@@ -17,10 +17,10 @@ Integrating visibiltiy constraints into feature models reduces the number of ava
 
 The repository is structured as follows:
 
-- [UVL Parser]() contains the extended ANTLR grammar and the corrsponding parser  
-- [FeatureIDE extension]() contains the FeatureIDE plugin extension that uses the UVL parsers and provides the adapted UVL feature model editor
+- [UVL Parser](/UVL%20Parser/) contains the extended ANTLR grammar and the corrsponding parser  
+- [FeatureIDE extension](/FeatureIDE/) contains the FeatureIDE plugin extension that uses the UVL parsers and provides the adapted UVL feature model editor
 - [evaluation]()
-    - [case studies]() the feature models from a former [case study] enriched with visibiltiy constraints 
+    - [case studies](/evaluation/case-studies/) the feature models from a former [case study] enriched with visibiltiy constraints 
     - [user study]() the questionnaire and the task descriptions that we gave the study participants. We omit the resonsees due to GDPR regulations.
 - [script]() to use the correct UVL parser with FeatureIDE
 
