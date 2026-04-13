@@ -33,6 +33,6 @@ The repository is structured as follows:
 Use the following command to build the UVL parser and FeatureIDE.
 
 ```bash
-chmod +x install_featureide.sh
+chmod +x compile-featureide.sh
 ./compile-featureide.sh /path/to/source-repo /path/to/target-repo
 ```
