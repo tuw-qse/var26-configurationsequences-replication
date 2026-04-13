@@ -1,0 +1,13 @@
+.project
+readme.txt
+features/Wonderful/Main.h
+features/Hello/Main.h
+features/Beautiful/Main.h
+features/World/Main.h
+configs/WonderfulWorld.equation
+configs/Hello.equation
+configs/BeautifulWorld.equation
+configs/HelloWorld.equation
+.cproject
+.settings/org.eclipse.cdt.managedbuilder.core.prefs
+model.xml

@@ -1,0 +1,13 @@
+.project
+features/Wonderful/HelloWorld.java
+features/Hello/HelloWorld.java
+features/Beautiful/HelloWorld.java
+features/World/HelloWorld.java
+configs/Hello.xml
+configs/WonderfulWorld.xml
+configs/HelloWorld.xml
+configs/BeautifulWorld.xml
+.settings/de.ovgu.featureide.core.prefs
+.settings/org.eclipse.jdt.core.prefs
+.classpath
+model.xml

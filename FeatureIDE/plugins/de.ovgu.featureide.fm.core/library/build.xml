@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="lib.fm.core" default="build" basedir=".">
+
+	<condition property="exist-external">
+		<available file="subant_build_external.xml" />
+	</condition>
+
+	<!-- Build external libraries -->
+	<target name="external_build" description="Clean and Build External Libraries" if="exist-external">
+		<subant>
+			<fileset file="subant_build_external.xml" />
+			<property name="target.name" value="${target.name}" />
+		</subant>
+	</target>
+
+	<!-- Clean own project -->
+	<target name="clean" description="Clean Project">
+		<subant>
+			<fileset file="subant_build_jar.xml" />
+			<target name="clean" />
+		</subant>
+	</target>
+
+	<!-- Build own project -->
+	<target name="build" description="Build Project">
+		<antcall target="external_build">
+			<param name="target.name" value="build" />
+		</antcall>
+		<subant>
+			<fileset file="subant_build_jar.xml" />
+			<target name="build" />
+		</subant>
+	</target>
+
+	<!-- Clean and build own project -->
+	<target name="clean_build" description="Clean and Build Project">
+		<antcall target="clean" />
+		<antcall target="external_build">
+			<param name="target.name" value="clean_build" />
+		</antcall>
+		<subant>
+			<fileset file="subant_build_jar.xml" />
+			<target name="build" />
+		</subant>
+	</target>
+
+</project>

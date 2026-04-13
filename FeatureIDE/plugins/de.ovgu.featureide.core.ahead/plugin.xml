@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+			point="de.ovgu.featureide.core.composers">
+		<composer
+				class="de.ovgu.featureide.ahead.AheadComposer"
+				description="Feature-oriented programming with Jak files (Java 1.4)."
+				id="de.ovgu.featureide.composer.ahead"
+				name="AHEAD"
+				nature="FeatureIDE_Core.jaknature">
+		</composer>
+	</extension>
+	<extension
+			point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:de.ovgu.featureide.fm.ui.menus.popupMenu?before=de.ovgu.featureide.fm.ui.menus.popupMenu.submenus">
+			<menu
+					icon="icons/FeatureIconSmall.ico"
+					id="de.ovgu.featureide.ahead.ui.submenu"
+					label="Ahead">
+				<visibleWhen
+						checkEnabled="false">
+					<with
+							variable="activeMenuSelection">
+						<iterate
+								ifEmpty="false"
+								operator="or">
+							<test
+									args="de.ovgu.featureide.composer.ahead"
+									property="de.ovgu.featureide.fm.ui.properties.composer">
+							</test>
+						</iterate>
+					</with>
+				</visibleWhen>
+			</menu>
+		</menuContribution>
+		<menuContribution
+				allPopups="false"
+				locationURI="popup:de.ovgu.featureide.fm.ui.menus.popupMenu?after=de.ovgu.featureide.fm.ui.menus.popupMenu.submenus">
+			<command
+					commandId="de.ovgu.featureide.fm.ui.commands.openWithGuidsl"
+					icon="icons/guidsl.gif"
+					id="de.ovgu.featureide.fm.ui.actions.openWithGuidsl"
+					label="Open with GUIDSL"
+					style="push"
+					tooltip="GUIDSL is a configuration tool written by Don Batory">
+				<visibleWhen
+						checkEnabled="false">
+					<reference
+							definitionId="de.ovgu.featureide.fm.ui.expressions.containsFeatureModel">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension
+			point="org.eclipse.ui.commands">
+		<command
+				id="de.ovgu.featureide.fm.ui.commands.openWithGuidsl"
+				name="Open with GUIDSL">
+		</command>
+	</extension>
+	<extension
+			point="org.eclipse.ui.handlers">
+		<handler
+				class="de.ovgu.featureide.ahead.ui.handlers.OpenWithGUIDSLHandler"
+				commandId="de.ovgu.featureide.fm.ui.commands.openWithGuidsl">
+		</handler>
+	</extension>
+ <extension
+       point="de.ovgu.featureide.fm.core.FMComposer">
+    <fmComposer
+          class="de.ovgu.featureide.ahead.AheadFMComposerExtension"
+          composer="de.ovgu.featureide.composer.ahead"
+          id="de.ovgu.featureide.core.ahead.fmComposer"
+          name="de.ovgu.featureide.core.ahead.fmComposer">
+    </fmComposer>
+ </extension>
+ <extension
+       point="de.ovgu.featureide.fm.core.FMFormat">
+    <fmFormat
+          class="de.ovgu.featureide.fm.core.io.guidsl.GuidslFormat"
+          id="de.ovgu.featureide.fm.core.format.GuidslFormat"
+          name="Guidsl">
+    </fmFormat>
+ </extension>
+</plugin>

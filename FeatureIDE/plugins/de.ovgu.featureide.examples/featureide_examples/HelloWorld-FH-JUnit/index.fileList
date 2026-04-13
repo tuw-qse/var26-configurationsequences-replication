@@ -1,0 +1,16 @@
+.project
+features/Wonderful/THelloWorld.java
+features/Wonderful/HelloWorld.java
+features/Hello/THelloWorld.java
+features/Hello/HelloWorld.java
+features/Beautiful/THelloWorld.java
+features/Beautiful/HelloWorld.java
+features/World/THelloWorld.java
+features/World/HelloWorld.java
+configs/Hello.xml
+configs/WonderfulWorld.xml
+configs/HelloWorld.xml
+configs/BeautifulWorld.xml
+.settings/org.eclipse.jdt.core.prefs
+.classpath
+model.xml
