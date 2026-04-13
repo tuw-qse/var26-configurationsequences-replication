@@ -1,0 +1,14 @@
+features
+    A
+        or
+            B
+            C
+            D
+            E
+
+constraints
+    A => B
+
+visibility-constraints
+    A vif B
+    B vif C | D | E
