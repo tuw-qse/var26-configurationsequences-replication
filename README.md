@@ -21,7 +21,7 @@ More importantly, they derive a semantically meaningful process sequence in all 
 
 The repository is structured as follows:
 
-- [UVL Parser](/UVL%20Parser/) contains the extended ANTLR grammar and the corresponding parser  
+- [UVL Parser extension](/UVL%20Parser/) contains the extended ANTLR grammar and the corresponding parser  
 - [FeatureIDE extension](/FeatureIDE/) contains the FeatureIDE plugin extension that uses the UVL parsers and provides the adapted UVL feature model editor
 - [script](compile-featureide.sh) to build the extended UVL parser, push it into FeatureIDE, and build the extended FeatureIDE
 - [evaluation](/evaluation/)
