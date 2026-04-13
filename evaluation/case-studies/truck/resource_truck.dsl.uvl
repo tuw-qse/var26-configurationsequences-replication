@@ -1,0 +1,8 @@
+features
+        truck_resource {extended__ true, abstract true}
+                optional
+                        Robots {deltaFile '', abstract true}
+                                or
+                                        KUKA_IIWA {deltaFile 'DKukaIIWA', InstanceNum '1-100'}
+                                        KUKA_KR_Agilus {deltaFile 'DKukaAgilus', InstanceNum '1-100'}
+

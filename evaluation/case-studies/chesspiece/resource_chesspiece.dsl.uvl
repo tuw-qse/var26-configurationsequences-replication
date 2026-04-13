@@ -1,0 +1,9 @@
+features
+        chesspieces_new_resource {extended__ true, abstract true}
+                optional
+                        "3DPrinter" {InstanceNum '1-100'}
+                        Barloader {InstanceNum '1-100'}
+                        Gripper {InstanceNum '1-100'}
+                        TurningMachine_45 {InstanceNum '1-100'}
+                        AssemblyStation {InstanceNum '1-100'}
+

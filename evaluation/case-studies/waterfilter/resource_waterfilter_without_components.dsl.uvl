@@ -1,0 +1,22 @@
+features
+        waterfilter_without_components_resource {extended__ true, abstract true}
+                optional
+                        PressinTools {deltaFile '', abstract true}
+                                or
+                                        PIT_45 {deltaFile 'DPIT_45(desiredCardinality)', InstanceNum '1-100'}
+                                        PIT_10 {deltaFile 'DPIT_10(desiredCardinality)', InstanceNum '1-100'}
+                        ScrewingTools {deltaFile '', abstract true}
+                                or
+                                        HandheldNutrunner {deltaFile '', InstanceNum '1-100'}
+                                                or
+                                                        HandheldNutrunner_DFL651FZ {deltaFile 'DDFL651FZ(desiredCardinality)', InstanceNum '1-100'}
+                                                        HandheldNutrunner_DFL063FZ {deltaFile 'DDFL063FZ(desiredCardinality)', InstanceNum '1-100'}
+                                        OpenendNutrunner {deltaFile '', InstanceNum '1-100'}
+                        Lifts {deltaFile '', abstract true}
+                                or
+                                        ChainHoist {deltaFile 'DChainHoist(desiredCardinality)', InstanceNum '1-100'}
+                        Batchfeeds {deltaFile '', abstract true}
+                                or
+                                        DryBatchfeeds {deltaFile 'DDryBatchfeeds(desiredCardinality)', InstanceNum '1-100'}
+                                        Wetfeeds {deltaFile 'DWetfeeds(desiredCardinality)', InstanceNum '1-100'}
+

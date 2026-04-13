@@ -1,0 +1,108 @@
+features
+        waterfilter_without_components_process {extended__ true, abstract true}
+                optional
+                        FillFilterTankSand {deltaFile '!DFillFilterTankSand'}
+                        AssembleNanofilter {deltaFile '!DAssembleNanofilter'}
+                        AssembleWastewaterTankXLModule {deltaFile '!DAssembleWastewaterTankXLModule'}
+                        AssembleMountedWastewaterTankXLRack2 {deltaFile '!DWTXLRack2'}
+                        FillFilterTankSModuleCharcoal {deltaFile '', abstract true}
+                                alternative
+                                        FillFilterTankSModuleCB {deltaFile '!DFillFilterTankSModuleCB'}
+                                        FillFilterTankSModuleCA {deltaFile '!DFillFilterTankSModuleCA'}
+                        FillFilterTankXLModuleCharcoal {deltaFile '', abstract true}
+                                alternative
+                                        FillFilterTankXLModuleCA {deltaFile '!DFillFilterTankXLModuleCA'}
+                                        FillFilterTankXLModuleCB {deltaFile '!DFillFilterTankXLModuleCB'}
+                        AssembleMountedNanofilter {deltaFile '', abstract true}
+                                alternative
+                                        AssembleMountedNanofilterRack2 {deltaFile '!DANanofilterRack2'}
+                                        AssembleMountedNanofilterRack1 {deltaFile '!DANanofilterRack1'}
+                mandatory
+                        AssembleFreshwaterTankModule {deltaFile '', abstract true}
+                                alternative
+                                        AssembleFreshwaterTankSModule {deltaFile '!DAssembleFreshwaterTankSModule'}
+                                        AssembleFreshwaterTankXLModule {deltaFile '!DAssembleFreshwaterTankXLModule'}
+                        AssembleMountedFreshwaterTank {deltaFile '', abstract true}
+                                alternative
+                                        AssembleMountedFreshwaterTankSIronFrame {deltaFile '!DFTSIronFrame'}
+                                        AssembleMountedFreshwaterTankSRack1 {deltaFile '!DFTSRack1'}
+                                        AssembleMountedFreshwaterTankXLRack2 {deltaFile '!DFTXLRack2'}
+                        AssembleMountedFilterTank {deltaFile '', abstract true}
+                                alternative
+                                        AssembleMountedCBFilterTankSModuleIronFrame {deltaFile '!DCBFTSIronFrame'}
+                                        AssembleMountedCAFilterTankSModuleRack1 {deltaFile '!DCAFTSModuleRack1'}
+                                        AssembleMountedCBFilterTankXLModuleRack2 {deltaFile '!DCBFTXLModuleRack2'}
+                                        AssembleMountedCAFilterTankSModuleIronFrame {deltaFile '!DCAFTSIronFrame'}
+                                        AssembleMountedCAFilterTankXLModuleRack2 {deltaFile '!DCAFTXLModuleRack2'}
+                                        AssembleMountedCBFilterTankSModuleRack1 {deltaFile '!DCBFTSModuleRack1'}
+                        AssembleCompleteTank {deltaFile '', abstract true}
+                                alternative
+                                        AssembleCompleteTank_2 {deltaFile '!DTank2'}
+                                        AssembleCompleteTank_6 {deltaFile '!DTank6'}
+                                        AssembleCompleteTank_3 {deltaFile '!DTank3'}
+                                        AssembleCompleteTank_5 {deltaFile '!DTank5'}
+                                        AssembleCompleteTank_1 {deltaFile '!DTank1'}
+                                        AssembleCompleteTank_4 {deltaFile '!DTank4'}
+                                        AssembleCompleteTank_8 {deltaFile '!DTank8'}
+                                        AssembleCompleteTank_7 {deltaFile '!DTank7'}
+
+constraints
+        AssembleMountedFreshwaterTankSRack1 => AssembleFreshwaterTankSModule
+        AssembleMountedCBFilterTankSModuleRack1 => FillFilterTankSModuleCB
+        AssembleMountedCAFilterTankSModuleIronFrame => FillFilterTankSModuleCA
+        FillFilterTankXLModuleCharcoal => !FillFilterTankSModuleCharcoal
+        AssembleCompleteTank_7 => AssembleMountedFreshwaterTankXLRack2
+        AssembleCompleteTank_7 => AssembleMountedCBFilterTankXLModuleRack2
+        AssembleCompleteTank_7 => AssembleMountedWastewaterTankXLRack2
+        AssembleCompleteTank_6 => AssembleMountedFreshwaterTankXLRack2
+        AssembleCompleteTank_6 => AssembleMountedCAFilterTankXLModuleRack2
+        AssembleCompleteTank_6 => AssembleMountedWastewaterTankXLRack2
+        AssembleCompleteTank_6 => AssembleMountedNanofilterRack2
+        AssembleCompleteTank_8 => AssembleMountedFreshwaterTankXLRack2
+        AssembleCompleteTank_8 => AssembleMountedCAFilterTankXLModuleRack2
+        AssembleCompleteTank_8 => AssembleMountedWastewaterTankXLRack2
+        AssembleCompleteTank_8 => AssembleMountedNanofilterRack2
+        AssembleMountedCAFilterTankSModuleRack1 => FillFilterTankSModuleCA
+        AssembleCompleteTank_3 => AssembleMountedFreshwaterTankSRack1
+        AssembleCompleteTank_3 => AssembleMountedCAFilterTankSModuleRack1
+        AssembleCompleteTank_3 => AssembleMountedNanofilterRack1
+        AssembleCompleteTank_2 => AssembleMountedFreshwaterTankSIronFrame
+        AssembleCompleteTank_2 => AssembleMountedCAFilterTankSModuleIronFrame
+        AssembleCompleteTank_5 => AssembleMountedFreshwaterTankXLRack2
+        AssembleCompleteTank_5 => AssembleMountedCBFilterTankXLModuleRack2
+        AssembleCompleteTank_5 => AssembleMountedWastewaterTankXLRack2
+        AssembleMountedCBFilterTankXLModuleRack2 => FillFilterTankXLModuleCB
+        AssembleCompleteTank_4 => AssembleMountedFreshwaterTankSRack1
+        AssembleCompleteTank_4 => AssembleMountedCBFilterTankSModuleRack1
+        AssembleCompleteTank_4 => AssembleMountedNanofilterRack1
+        AssembleCompleteTank_1 => AssembleMountedFreshwaterTankSIronFrame
+        AssembleCompleteTank_1 => AssembleMountedCBFilterTankSModuleIronFrame
+        AssembleMountedCBFilterTankSModuleIronFrame => FillFilterTankSModuleCB
+        AssembleMountedFreshwaterTankSIronFrame => AssembleFreshwaterTankSModule
+        FillFilterTankSModuleCharcoal => !FillFilterTankXLModuleCharcoal
+        AssembleMountedFreshwaterTankXLRack2 => AssembleFreshwaterTankXLModule
+        AssembleMountedNanofilterRack2 => AssembleNanofilter
+        AssembleMountedNanofilterRack1 => AssembleNanofilter
+        AssembleMountedWastewaterTankXLRack2 => AssembleWastewaterTankXLModule
+        AssembleMountedCAFilterTankXLModuleRack2 => FillFilterTankXLModuleCA
+
+visibility-constraints
+        AssembleMountedCBFilterTankSModuleRack1 vif FillFilterTankSModuleCB
+        AssembleMountedCAFilterTankSModuleIronFrame vif FillFilterTankSModuleCA
+        AssembleMountedCAFilterTankSModuleRack1 vif FillFilterTankSModuleCA
+        AssembleMountedCBFilterTankXLModuleRack2 vif FillFilterTankXLModuleCB
+        AssembleMountedCBFilterTankSModuleIronFrame vif FillFilterTankSModuleCB
+        AssembleMountedCAFilterTankXLModuleRack2 vif FillFilterTankXLModuleCA
+        AssembleCompleteTank_7 vif AssembleMountedFreshwaterTankXLRack2 & AssembleMountedCBFilterTankXLModuleRack2 & AssembleMountedWastewaterTankXLRack2
+        AssembleCompleteTank_6 vif AssembleMountedFreshwaterTankXLRack2 & AssembleMountedCAFilterTankXLModuleRack2 & AssembleMountedWastewaterTankXLRack2 & AssembleMountedNanofilterRack2
+        AssembleCompleteTank_8 vif AssembleMountedFreshwaterTankXLRack2 & AssembleMountedCAFilterTankXLModuleRack2 & AssembleMountedWastewaterTankXLRack2 & AssembleMountedNanofilterRack2
+        AssembleCompleteTank_3 vif AssembleMountedFreshwaterTankSRack1 & AssembleMountedCAFilterTankSModuleRack1 & AssembleMountedNanofilterRack1
+        AssembleCompleteTank_2 vif AssembleMountedFreshwaterTankSIronFrame & AssembleMountedCAFilterTankSModuleIronFrame
+        AssembleCompleteTank_5 vif AssembleMountedFreshwaterTankXLRack2 & AssembleMountedCBFilterTankXLModuleRack2 & AssembleMountedWastewaterTankXLRack2
+        AssembleCompleteTank_4 vif AssembleMountedFreshwaterTankSRack1 & AssembleMountedCBFilterTankSModuleRack1 & AssembleMountedNanofilterRack1
+        AssembleCompleteTank_1 vif AssembleMountedFreshwaterTankSIronFrame & AssembleMountedCBFilterTankSModuleIronFrame
+        AssembleMountedFreshwaterTankSRack1 vif AssembleFreshwaterTankSModule
+        AssembleMountedFreshwaterTankSIronFrame vif AssembleFreshwaterTankSModule
+        AssembleMountedFreshwaterTankXLRack2 vif AssembleFreshwaterTankXLModule
+        AssembleMountedWastewaterTankXLRack2 vif AssembleWastewaterTankXLModule
+        AssembleMountedNanofilter vif AssembleNanofilter

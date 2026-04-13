@@ -1,0 +1,34 @@
+features
+        truck_process {extended__ true, abstract true}
+                optional
+                        InsertCabin {deltaFile ''}
+                        InstallCabin {deltaFile ''}
+                mandatory
+                        InstallBody {deltaFile '', abstract true}
+                                alternative
+                                        InstallStakeBed {deltaFile 'DInstallStakeBed'}
+                                        InstallDumper {deltaFile 'DInstallDumper'}
+                                        InstallTank {deltaFile 'DInstallTank'}
+                                        InstallOpenTop {deltaFile 'DInstallOpenTop'}
+                        InsertBody {deltaFile '', abstract true}
+                                alternative
+                                        InsertDumper {deltaFile 'DInsertDumper'}
+                                        InsertStakeBed {deltaFile 'DInsertStakeBed'}
+                                        InsertOpenTop {deltaFile 'DInsertOpenTop'}
+                                        InsertTank {deltaFile 'DInsertTank'}
+                        InsertChassis {deltaFile ''}
+
+constraints
+        InstallCabin => InsertCabin
+        InstallOpenTop => InsertOpenTop
+        InstallTank => InsertTank
+        InstallStakeBed => InsertStakeBed
+        InstallDumper => InsertDumper
+        InstallDumper => InstallCabin
+
+visibility-constraints
+        InstallCabin vif InsertCabin
+        InstallOpenTop vif InsertOpenTop
+        InstallTank vif InsertTank
+        InstallStakeBed vif InsertStakeBed
+        InstallDumper vif InsertDumper

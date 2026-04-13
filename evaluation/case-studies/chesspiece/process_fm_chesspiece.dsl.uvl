@@ -1,0 +1,47 @@
+namespace chesspieces_process
+
+features
+	chesspieces_process {extended__ true, abstract true}
+		optional
+			ScrewBody
+			InsertRod
+			InsertBase
+			ScrewBase
+			InsertBody
+			TurnBase
+			InsertPLA
+			CutAluminumBar
+			LoadAluminumBar
+		mandatory
+			PrintBody {abstract true}
+				alternative
+					PrintBody_minor {abstract true}
+						alternative
+							PrintPawnBody
+							PrintKnightBody
+							PrintRookBody
+							PrintBishopBody
+					PrintBody_major {abstract true}
+						alternative
+							PrintQueenBody
+							PrintKingBody
+			CarveReamings {abstract true}
+				alternative
+					CarveReamings_two
+					CarveReamings_one
+
+constraints
+	PrintBody_minor => CarveReamings_one
+	PrintBody_major => CarveReamings_two
+
+visibility-constraints
+	CarveReamings vif LoadAluminumBar
+	TurnBase vif LoadAluminumBar
+	CutAluminumBar vif TurnBase & CarveReamings
+	InsertBase vif CutAluminumBar
+	PrintBody vif InsertPLA
+	PrintBody_minor vif InsertPLA
+	PrintBody_major vif InsertPLA
+	InsertBody vif PrintBody_minor | PrintBody_major
+	ScrewBody vif InsertBody & InsertRod
+	ScrewBase vif InsertBase & InsertRod

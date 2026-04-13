@@ -1,0 +1,75 @@
+namespace shiftfork_process
+
+features
+	shiftfork_process {extended__ true, abstract true}
+		optional
+			WeldFork5
+			InsertJack1
+			PressJack1
+			InsertScrew
+			InsertRing1
+			PressORing
+			WeldJack1
+			ScrewScrew
+			InsertORing
+			InsertFork4
+			InsertFork3
+			InsertFork5
+			PressRing1
+			WeldFork3
+			WeldFork4
+		mandatory
+			InsertLock {abstract true}
+				alternative
+					InsertLock2
+					InsertLock1
+					InsertLock3
+			InsertPipe {abstract true}
+				alternative
+					InsertPipe8
+					InsertPipe2
+					InsertPipe3
+			PressBarrel {abstract true}
+				optional
+					PressBarrel1_1
+					PressBarrel1_2
+			WeldBarrel {abstract true}
+				optional
+					WeldBarrel1_2
+					WeldBarrel1_1
+			InsertBarrel {abstract true}
+				optional
+					InsertBarrel1_2
+					InsertBarrel1_1
+			WeldLock {abstract true}
+				alternative
+					WeldLock3
+					WeldLock1
+					WeldLock2
+
+constraints
+	InsertPipe3 => !InsertBarrel1_2
+
+visibility-constraints
+	InsertBarrel1_2 vif InsertPipe2 | InsertPipe8
+	PressBarrel1_1 vif InsertBarrel1_1 & InsertPipe
+	PressBarrel1_2 vif InsertBarrel1_2 & InsertPipe
+	WeldBarrel1_1 vif PressBarrel1_1
+	WeldBarrel1_2 vif PressBarrel1_2
+	WeldFork5 vif InsertFork5 & (InsertPipe2 | InsertPipe3 | InsertPipe8)
+	InsertLock3 vif InsertPipe8
+	InsertLock2 vif InsertPipe3
+	InsertLock1 vif InsertPipe2 | InsertPipe3
+	WeldLock1 vif InsertLock1 & WeldFork3 & WeldFork4
+	WeldLock2 vif InsertLock2 & WeldFork3 & WeldFork4
+	WeldLock3 vif InsertLock3 & WeldFork3 & WeldFork4
+	WeldJack1 vif InsertJack1 & InsertPipe
+	PressRing1 vif InsertRing1 & InsertPipe
+	WeldFork3 vif InsertFork3 & InsertPipe & WeldFork5
+	WeldFork4 vif InsertFork4 & InsertPipe & WeldFork5
+	WeldJack1 vif InsertJack1 & InsertPipe
+	PressRing1 vif InsertRing1 & InsertPipe
+	PressORing vif InsertORing & PressRing1 & WeldJack1
+	PressJack1 vif InsertJack1 & (InsertPipe2 | InsertPipe3 | InsertPipe8)
+	WeldJack1 vif PressJack1
+	ScrewScrew vif WeldJack1 & PressRing1 & InsertScrew

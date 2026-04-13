@@ -1,0 +1,28 @@
+features
+        shiftfork_resource {extended__ true, abstract true}
+                optional
+                        Linefeeds {abstract true}
+                                or
+                                        LF_4 {InstanceNum '1-100'}
+                                        LF_3 {InstanceNum '1-100'}
+                        ScrewingRobots {abstract true}
+                                or
+                                        SC_70 {InstanceNum '1-100'}
+                        WeldingRobots {abstract true}
+                                or
+                                        LaserWeldingRobots {abstract true}
+                                                or
+                                                        LaserWeldingRobot_01 {InstanceNum '1-100'}
+                                        UltrasonicWeldingRobots {abstract true}
+                                                or
+                                                        UltrasonicWeldingRobot_16 {InstanceNum '1-100'}
+                        PressinRobots {abstract true}
+                                or
+                                        SmallPartsPressinRobots {abstract true}
+                                                or
+                                                        PR_05 {InstanceNum '1-100'}
+                                        MediumPartsPressinRobots {abstract true}
+                                                or
+                                                        PR_04 {InstanceNum '1-100'}
+                                                        PR_12 {InstanceNum '1-100'}
+

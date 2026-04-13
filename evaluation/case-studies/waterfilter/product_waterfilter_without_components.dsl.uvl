@@ -1,0 +1,89 @@
+features
+        waterfilter_without_components_product {extended__ true, abstract true}
+                optional
+                        WastewaterTankXLModule {deltaFile ''}
+                        Valve {deltaFile '', abstract true}
+                                optional
+                                        Valve2 {deltaFile ''}
+                                        Valve1 {deltaFile ''}
+                        Nanofilter {deltaFile ''}
+                                mandatory
+                                        NanofilterMaterial {deltaFile ''}
+                                        NanofilterHull {deltaFile ''}
+                        WastewaterTankXL {deltaFile ''}
+                        FreshwaterTank {deltaFile '', abstract true}
+                                alternative
+                                        FreshwaterTankS {deltaFile ''}
+                                        FreshwaterTankXL {deltaFile ''}
+                        Charcoal {deltaFile '', abstract true}
+                                alternative
+                                        CharcoalBone {deltaFile ''}
+                                        CharcoalActive {deltaFile ''}
+                mandatory
+                        Mount {deltaFile '', abstract true}
+                                alternative
+                                        IronFrame {deltaFile ''}
+                                        Rack2 {deltaFile ''}
+                                        Rack1 {deltaFile ''}
+                        FreshwaterTankModule {deltaFile '', abstract true}
+                                alternative
+                                        FreshwaterTankSModule {deltaFile ''}
+                                        FreshwaterTankXLModule {deltaFile ''}
+                        FilterTankModule {deltaFile '', abstract true}
+                                alternative
+                                        FilterTankXLModule {deltaFile '', abstract true}
+                                                alternative
+                                                        CBFilterTankXLModule {deltaFile ''}
+                                                        CAFilterTankXLModule {deltaFile ''}
+                                        FilterTankSModule {deltaFile '', abstract true}
+                                                alternative
+                                                        CAFilterTankSModule {deltaFile ''}
+                                                        CBFilterTankSModule {deltaFile ''}
+                        Tube {deltaFile '', abstract true}
+                                optional
+                                        Tube3 {deltaFile ''}
+                                mandatory
+                                        Tube1 {deltaFile ''}
+                                        Tube2 {deltaFile ''}
+                        FibreMembrane {deltaFile ''}
+                        FilterTank {deltaFile '', abstract true}
+                                alternative
+                                        FilterTankS {deltaFile ''}
+                                        FilterTankXL {deltaFile ''}
+                        Sand {deltaFile ''}
+
+constraints
+        FilterTankXLModule => FilterTankXL
+        CAFilterTankXLModule => FilterTankXL
+        CAFilterTankXLModule => CharcoalActive
+        WastewaterTankXLModule => WastewaterTankXL
+        WastewaterTankXLModule => Valve2
+        FilterTankSModule => FilterTankS
+        CAFilterTankSModule => FilterTankS
+        CAFilterTankSModule => CharcoalActive
+        CBFilterTankSModule => FilterTankS
+        CBFilterTankSModule => CharcoalBone
+        FreshwaterTankXLModule => Valve1
+        CBFilterTankXLModule => FilterTankXL
+        CBFilterTankXLModule => CharcoalBone
+        FreshwaterTankSModule => FreshwaterTankS
+        FreshwaterTankSModule => Valve1
+        FreshwaterTankXL => (FilterTankXL & WastewaterTankXL)
+        WastewaterTankXL => (FilterTankXL & FreshwaterTankXL)
+        FilterTankXL => (FreshwaterTankXL & WastewaterTankXL)
+        FreshwaterTankXLModule => (FilterTankXLModule & WastewaterTankXLModule)
+        WastewaterTankXLModule => (FilterTankXLModule & FreshwaterTankXLModule)
+        FilterTankXLModule => (FreshwaterTankXLModule & WastewaterTankXLModule)
+        Nanofilter => !IronFrame
+        FreshwaterTankXLModule => Rack2
+        FreshwaterTankS => (IronFrame | Rack1)
+        FreshwaterTankXLModule => Tube3
+        FreshwaterTankSModule => !Tube3
+        FreshwaterTankSModule => !Valve2
+
+visibility-constraints
+		FilterTankModule vif FilterTankXL | FilterTankS
+		FilterTankXLModule vif FilterTankXL
+		FilterTankSModule vif FilterTankS
+		FreshwaterTankModule vif FreshwaterTankS | FreshwaterTankXL
+		WastewaterTankXLModule vif WastewaterTankXL

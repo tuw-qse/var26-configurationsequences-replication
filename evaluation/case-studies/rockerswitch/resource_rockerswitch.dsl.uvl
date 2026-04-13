@@ -1,0 +1,22 @@
+features
+        rockerswitch_resource {extended__ true, abstract true}
+                optional
+                        Linefeeds {abstract true}
+                                or
+                                        LF_4 {InstanceNum '1-100'}
+                                        LF_3 {InstanceNum '1-100'}
+                                        LF_6 {InstanceNum '1-100'}
+                        ScrewingRobots {abstract true}
+                                or
+                                        SC_70 {InstanceNum '1-100'}
+                        PressinRobots {abstract true}
+                                or
+                                        SmallPartsPressinRobots {abstract true}
+                                                or
+                                                        PR_05 {InstanceNum '1-100'}
+                                                        PR_02 {InstanceNum '1-100'}
+                                        MediumPartsPressinRobots {abstract true}
+                                                or
+                                                        PR_04 {InstanceNum '1-100'}
+                                                        PR_12 {InstanceNum '1-100'}
+
